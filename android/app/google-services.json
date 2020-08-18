@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "594316607289",
+    "firebase_url": "https://lvbrothe-sbeers.firebaseio.com",
+    "project_id": "lvbrothe-sbeers",
+    "storage_bucket": "lvbrothe-sbeers.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594316607289:android:e01bb0f7765cccdcaeb2e8",
+        "android_client_info": {
+          "package_name": "com.loja_virtual_brothesbeer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594316607289-uddl7kj2vvuhd5lehr2apg4d63jiv3ee.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.loja_virtual_brothesbeer",
+            "certificate_hash": "1f7113c21efc1db3574295ca27f08fc528ce636a"
+          }
+        },
+        {
+          "client_id": "594316607289-sfdcci2vsjlr1ebhg4f58lr4kb0bisla.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1OcyuiSOK6cmUNYK6H3aHRhop52yhfIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594316607289-sfdcci2vsjlr1ebhg4f58lr4kb0bisla.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

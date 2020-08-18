@@ -1,0 +1,44 @@
+import 'package:flutter/material.dart';
+import 'package:loja_virtual_brothesbeer/common/custom_drawer/custom_drawer_header.dart';
+import 'package:loja_virtual_brothesbeer/common/custom_drawer/drawer_tile.dart';
+import 'package:loja_virtual_brothesbeer/models/users_manager.dart';
+import 'package:provider/provider.dart';
+
+class CustomDrawer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: <Widget>[
+          CustomDrawerHeader(),
+          const SizedBox(height: 30,),
+          const DrawerTile(iconData: Icons.home,
+            title: "Inicio", page: 0,),
+          const DrawerTile(iconData: Icons.list,
+            title: "Produtos", page: 1,),
+          const DrawerTile(iconData: Icons.playlist_add_check,
+            title: "Meus pedidos", page: 2,),
+          const DrawerTile(iconData: Icons.location_on,
+            title: "Nossos parceiros", page: 3,),
+          Consumer<UserManager>(
+              builder: (_, userManager, __){
+                if(userManager.adminEnabled){
+                  return Column(
+                    children: [
+                      const Divider(),
+                      const DrawerTile(iconData: Icons.people,
+                        title: "Usuários cadastrados", page: 4,),
+                      const DrawerTile(iconData: Icons.settings,
+                        title: "Pedidos recebidos", page: 5,),
+                    ],
+                  );
+                } else {
+                  return Container();
+                }
+              }
+          )
+        ],
+      ),
+    );
+  }
+}
