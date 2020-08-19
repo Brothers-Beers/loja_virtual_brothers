@@ -10,6 +10,8 @@ class HomeManager extends ChangeNotifier {
 
   List<Section> sections = [];
 
+  List<Section> editingSections = [];
+
   bool editing = false;
 
   final Firestore firestore = Firestore.instance;
