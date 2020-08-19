@@ -15,9 +15,10 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            //color: Colors.white38,
+            decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                    colors: [Colors.grey[900], Colors.grey[500]],
+                    colors: [Colors.white38, Colors.white70],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter)),
           ),
@@ -29,7 +30,7 @@ class HomeScreen extends StatelessWidget {
                 floating: true,
                 elevation: 0,
                 flexibleSpace: const FlexibleSpaceBar(
-                  title: Text("Brother's Beers", style: TextStyle(color: Colors.white),),
+                  title: Text("Brother's Beers", style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500),),
                   centerTitle: true,
                 ),
                 //iconTheme: IconThemeData(color: Colors.black),

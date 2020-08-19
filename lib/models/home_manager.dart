@@ -29,4 +29,14 @@ class HomeManager extends ChangeNotifier {
     notifyListeners();
   }
 
+  void saveEditing(){
+    editing = true;
+    notifyListeners();
+  }
+
+  void discardEditing(){
+    editing = true;
+    notifyListeners();
+  }
+
 }
