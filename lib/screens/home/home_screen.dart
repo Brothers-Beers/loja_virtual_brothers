@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loja_virtual_brothesbeer/common/custom_drawer/custom_drawer.dart';
 import 'package:loja_virtual_brothesbeer/models/home_manager.dart';
 import 'package:loja_virtual_brothesbeer/models/users_manager.dart';
+import 'package:loja_virtual_brothesbeer/screens/home/components/add_section_widget.dart';
 import 'package:loja_virtual_brothesbeer/screens/home/components/section_list.dart';
 import 'package:loja_virtual_brothesbeer/screens/home/components/section_staggered.dart';
 import 'package:provider/provider.dart';
@@ -87,6 +88,9 @@ class HomeScreen extends StatelessWidget {
                           }
                        }
                     ).toList();
+                if(homeManager.editing){
+                  children.add(AddSectionWidget());
+                }
                 return SliverList(delegate: SliverChildListDelegate(children));
               })
             ],
