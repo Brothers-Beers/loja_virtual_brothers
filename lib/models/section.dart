@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:loja_virtual_brothesbeer/models/section_items.dart';
 
-class Section {
+class Section extends ChangeNotifier{
 
   Section({this.name, this.type, this.items}){
     items = items ?? [];
@@ -12,6 +13,10 @@ class Section {
     type = document.data['type'] as String;
     items = (document.data['items'] as List).map(
             (i) => SectionItems.fromMap(i as Map<String, dynamic>)).toList();
+  }
+
+  void addItem(SectionItems item){
+    items.add(item);
   }
 
   String name;

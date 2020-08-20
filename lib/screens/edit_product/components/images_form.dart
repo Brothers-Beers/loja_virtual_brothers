@@ -65,6 +65,7 @@ class ImagesForm extends StatelessWidget {
                         iconSize: 50,
                         icon: const Icon(Icons.add_a_photo),
                         onPressed: (){
+                        if(Platform.isAndroid)
                           showModalBottomSheet(
                               context: context,
                               builder: (_) => ImageSourceSheet(

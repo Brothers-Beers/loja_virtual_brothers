@@ -47,7 +47,7 @@ class HomeManager extends ChangeNotifier {
   void enterEditing(){
     editing = true;
 
-    _editingSections = sections.map((s) => s.clone()).toList();
+    _editingSections = _sections.map((s) => s.clone()).toList();
     notifyListeners();
   }
 
