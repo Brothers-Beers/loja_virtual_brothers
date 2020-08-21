@@ -27,18 +27,22 @@ class SectionList extends StatelessWidget {
             SectionHeader(),
             SizedBox(
               height: 150,
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                  itemBuilder: (_, index){
-                  if(index < section.items.length)
-                    return ItemTile(section.items[index]);
-                  else
-                    return AddTileWidget();
-                  },
-                  separatorBuilder: (_, __) => const SizedBox(width: 4,),
-                  itemCount: homeManager.editing ? section.items.length + 1
-                      : section.items.length,
-              )
+              child: Consumer<Section>(
+                  builder: (_, section, __){
+                    return ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (_, index){
+                        if(index < section.items.length)
+                          return ItemTile(section.items[index]);
+                        else
+                          return AddTileWidget();
+                      },
+                      separatorBuilder: (_, __) => const SizedBox(width: 4,),
+                      itemCount: homeManager.editing ? section.items.length + 1
+                          : section.items.length,
+                    );
+                  }
+              ),
             )
           ],
         ),

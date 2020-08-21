@@ -25,23 +25,28 @@ class SectionStaggered extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SectionHeader(),
-            StaggeredGridView.countBuilder(
-              padding: EdgeInsets.zero,
-              shrinkWrap: true,
-                crossAxisCount: 4,
-                itemCount: homeManager.editing ?
-                  section.items.length + 1 :
-                  section.items.length,
-                itemBuilder: (_, index){
-                  if(index < section.items.length)
-                    return ItemTile(section.items[index]);
-                  else
-                    return AddTileWidget();
-                },
-                staggeredTileBuilder: (index) =>
-                    StaggeredTile.count(2, index.isEven ? 2 : 1),
-              mainAxisSpacing: 4,
-              crossAxisSpacing: 4,
+            Consumer<Section>(
+                builder: (_, section, __){
+                  return StaggeredGridView.countBuilder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    crossAxisCount: 4,
+                    itemCount: homeManager.editing ?
+                    section.items.length + 1 :
+                    section.items.length,
+                    itemBuilder: (_, index){
+                      if(index < section.items.length)
+                        return ItemTile(section.items[index]);
+                      else
+                        return AddTileWidget();
+                    },
+                    staggeredTileBuilder: (index) =>
+                        StaggeredTile.count(2, index.isEven ? 2 : 1),
+                    mainAxisSpacing: 4,
+                    crossAxisSpacing: 4,
+                  );
+                }
             )
           ],
         ),

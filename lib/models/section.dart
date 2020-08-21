@@ -15,13 +15,41 @@ class Section extends ChangeNotifier{
             (i) => SectionItems.fromMap(i as Map<String, dynamic>)).toList();
   }
 
-  void addItem(SectionItems item){
-    items.add(item);
-  }
-
   String name;
   String type;
   List<SectionItems> items;
+
+  String _error;
+  String get error => _error;
+  set error(String value){
+    _error = value;
+    notifyListeners();
+  }
+
+  void addItem(SectionItems item){
+    items.add(item);
+    notifyListeners();
+  }
+
+  void removeItem(SectionItems item){
+    items.remove(item);
+    notifyListeners();
+  }
+
+  bool valid(){
+    if(name == null || name.isEmpty){
+      error = 'Titulo inválido';
+    } else if(items.isEmpty){
+      error = 'Insira ao menos uma imagem';
+    } else {
+      error = null;
+    }
+    return error == null;
+  }
+
+  Future<void> save() async {
+
+  }
 
   Section clone(){
     return Section(
@@ -35,4 +63,5 @@ class Section extends ChangeNotifier{
   String toString() {
     return 'Section{name: $name, type: $type, items: $items}';
   }
+
 }
