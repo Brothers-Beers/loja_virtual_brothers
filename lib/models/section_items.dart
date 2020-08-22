@@ -21,4 +21,11 @@ class SectionItems {
   String toString() {
     return 'SectionItems{image: $image, product: $product}';
   }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'image': image,
+      'product': product
+    };
+  }
 }
