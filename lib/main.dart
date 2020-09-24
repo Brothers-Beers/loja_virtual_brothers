@@ -5,6 +5,7 @@ import 'package:loja_virtual_brothesbeer/models/home_manager.dart';
 import 'package:loja_virtual_brothesbeer/models/product_manager.dart';
 import 'package:loja_virtual_brothesbeer/models/products.dart';
 import 'package:loja_virtual_brothesbeer/models/users_manager.dart';
+import 'package:loja_virtual_brothesbeer/screens/address/address_screen.dart';
 import 'package:loja_virtual_brothesbeer/screens/base/base_screen.dart';
 import 'package:loja_virtual_brothesbeer/screens/cart/cart_screen.dart';
 import 'package:loja_virtual_brothesbeer/screens/edit_product/edit_product_screen.dart';
@@ -16,6 +17,7 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
@@ -72,6 +74,8 @@ class MyApp extends StatelessWidget {
               ));
             case "/cart":
               return MaterialPageRoute(builder: (_) => CartScreen());
+            case "/address":
+              return MaterialPageRoute(builder: (_) => AddressScreen());
             case "/edit_product":
               return MaterialPageRoute(builder: (_) => EditProductScreen(
                 settings.arguments as Product
